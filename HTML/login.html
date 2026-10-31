@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Register for Coding Conf and create a customized demo ticket.">
+  <title>Coding Conf | Registration</title>
+  <link rel="icon" type="image/png" href="../assets/images/favicon-32x32.png">
+  <link rel="stylesheet" href="../css/style.css">
+  <script src="../js/validation.js" defer></script>
+</head>
+<body class="page form-page">
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+  <header class="site-header">
+    <nav class="main-nav container" aria-label="Main navigation">
+      <a class="brand" href="index.html" aria-label="Coding Conf home">
+        <img src="../assets/images/logo-full.svg" alt="Coding Conf" width="180" height="38">
+      </a>
+      <ul class="nav-links"><li><a href="index.html">Home</a></li><li><a href="index.html#event-details">Details</a></li></ul>
+    </nav>
+  </header>
+
+  <main id="main-content" class="form-main container">
+    <div class="page-intro">
+      <p class="eyebrow">Create your attendee pass</p>
+      <h1>Your Journey to <span class="gradient-text">Coding Conf</span> Starts Here!</h1>
+      <p>Fill in the details below to generate your personalized conference ticket.</p>
+    </div>
+
+    <!-- novalidate lets our custom JavaScript show contextual validation errors. -->
+    <form id="registration-form" class="registration-form" novalidate>
+      <div class="form-field">
+        <label class="field-label" for="avatar">Upload Avatar <span aria-hidden="true">*</span></label>
+        <div class="upload-zone" id="upload-zone">
+          <input id="avatar" name="avatar" class="upload-input" type="file" accept="image/png,image/jpeg" aria-describedby="avatar-help avatar-error" required>
+          <img id="avatar-preview" class="avatar-preview" alt="" hidden>
+          <span id="upload-icon" class="upload-icon"><img src="../assets/images/icon-upload.svg" alt="" width="28" height="28"></span>
+          <span id="upload-prompt">Drag and drop or click to upload</span>
+          <span id="upload-filename" class="upload-filename"></span>
+        </div>
+        <p class="field-hint" id="avatar-help">JPEG or PNG only. Image must be less than 500 KB.</p>
+        <p class="field-error" id="avatar-error" aria-live="polite"></p>
+      </div>
+
+      <div class="form-field">
+        <label class="field-label" for="full-name">Full Name <span aria-hidden="true">*</span></label>
+        <input class="text-input" type="text" id="full-name" name="fullName" placeholder="Jane Doe" autocomplete="name" maxlength="100" aria-describedby="name-error" required>
+        <p class="field-error" id="name-error" aria-live="polite"></p>
+      </div>
+
+      <div class="form-field">
+        <label class="field-label" for="email">Email Address <span aria-hidden="true">*</span></label>
+        <input class="text-input" type="email" id="email" name="email" placeholder="jane@example.com" autocomplete="email" maxlength="254" aria-describedby="email-error" required>
+        <p class="field-error" id="email-error" aria-live="polite"></p>
+      </div>
+
+      <div class="form-field">
+        <label class="field-label" for="github">GitHub Username <span aria-hidden="true">*</span></label>
+        <input class="text-input" type="text" id="github" name="github" placeholder="@janedoe" autocapitalize="none" spellcheck="false" maxlength="40" aria-describedby="github-help github-error" required>
+        <p class="field-hint" id="github-help">Start with @, for example @octocat.</p>
+        <p class="field-error" id="github-error" aria-live="polite"></p>
+      </div>
+
+      <p id="form-status" class="form-status" role="status" aria-live="polite"></p>
+      <button id="submit-button" class="button button-primary submit-button" type="submit">Generate My Ticket</button>
+      <p class="privacy-note">Demo only: your details stay in this browser tab. No real email is sent or account is created.</p>
+    </form>
+  </main>
+  <footer class="site-footer container"><p>© Coding Conf 2026 • CIT2011 demonstration project</p><a href="index.html">Back to event</a></footer>
+</body>
+</html>
